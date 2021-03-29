@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
+  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
   <event name="GM Main Menu" id_arme="605a7c3f-76b5-4953-bb43-aa50abc3f88b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
     <if_variable name="GM Menu" comparator="EQUALS" value="1.0" />
@@ -1067,7 +1067,8 @@
     <clear_gm_button text="Hegemony Assets\Torgoth Base" />
     <clear_gm_button text="Hegemony Assets\Skaraan Base" />
     <clear_gm_button text="Hegemony Assets\Civilian Bio Base" />
-    <clear_gm_button text="Hegemony Assets\Defense Platform" />
+    <clear_gm_button text="Hegemony Assets\Fighter Defense Platform" />
+    <clear_gm_button text="Hegemony Assets\Hegemony Defense Platform" />
     <clear_gm_button text="Hegemony Assets\Sensor Buoy (Active)" />
     <clear_gm_button text="Hegemony Assets\Sensor Buoy (Inactive)" />
     <clear_gm_button text="Hegemony Assets\Slingshot Platform" />
@@ -2611,7 +2612,7 @@
     <create type="station" use_gm_position="" name="--" hullID="1100" sideValue="SideValue" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Hegemony Menu" id_arme="c7990b33-1f5b-4913-9155-e131df5266a1" parent_id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" />
+  <folder_arme name="Hegemony Menu" id_arme="c7990b33-1f5b-4913-9155-e131df5266a1" parent_id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" expanded_arme="" />
   <event name="Hegemony Menu" id_arme="7ddac279-fa73-4076-b3b7-156d6ee3b796" parent_id_arme="c7990b33-1f5b-4913-9155-e131df5266a1">
     <if_variable name="Ship Spawn Menu" comparator="EQUALS" value="7.0" />
     <if_timer_finished name="Ship Spawn Menu" />
@@ -2662,13 +2663,14 @@
     <set_gm_button text="Hegemony Assets\Torgoth Base" />
     <set_gm_button text="Hegemony Assets\Skaraan Base" />
     <set_gm_button text="Hegemony Assets\Civilian Bio Base" />
-    <set_gm_button text="Hegemony Assets\Defense Platform" />
+    <set_gm_button text="Hegemony Assets\Fighter Defense Platform" />
+    <set_gm_button text="Hegemony Assets\Hegemony Defense Platform" />
     <set_gm_button text="Hegemony Assets\Sensor Buoy (Active)" />
     <set_gm_button text="Hegemony Assets\Sensor Buoy (Inactive)" />
     <set_gm_button text="Hegemony Assets\Slingshot Platform" />
     <set_gm_button text="Hegemony Assets\Slingshot Power" />
     <set_gm_button text="Hegemony Assets\Slingshot Antenna" />
-    <!--<set_gm_button text="Hegemony Assets\Slingshot Array" />-->
+    <set_gm_button text="Hegemony Assets\Slingshot Array" />
     <!--Change Default Side-->
     <clear_gm_button text="Change" />
     <clear_gm_button text="1" />
@@ -3047,7 +3049,7 @@
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Assets" id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669" parent_id_arme="c7990b33-1f5b-4913-9155-e131df5266a1" />
+  <folder_arme name="Assets" id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669" parent_id_arme="c7990b33-1f5b-4913-9155-e131df5266a1" expanded_arme="" />
   <event name="Kralien Base" id_arme="2e66a51d-6499-4cfe-885d-fa4502fd6441" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_gm_button text="Hegemony Assets\Kralien Base" />
     <create type="station" use_gm_position="" name="--" hullID="1005" sideValue="SideValue" />
@@ -3068,10 +3070,16 @@
     <create type="station" use_gm_position="" name="--" hullID="1008" sideValue="SideValue" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="Hegemony Defense Platform" id_arme="f5e93256-78b1-415b-9eeb-599a74b453ba" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
-    <if_gm_button text="Hegemony Assets\Defense Platform" />
+  <event name="Arvonian Defense Platform" id_arme="ecfa5b8b-440e-445e-9537-4b8b800a88cf" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
+    <if_gm_button text="Hegemony Assets\Fighter Defense Platform" />
     <create type="enemy" use_gm_position="" name="--" hullID="1350" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="9.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="Hegemony Defense Platform" id_arme="f5e93256-78b1-415b-9eeb-599a74b453ba" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
+    <if_gm_button text="Hegemony Assets\Hegemony Defense Platform" />
+    <create type="enemy" use_gm_position="" name="--" hullID="1350" sideValue="SideValue" fleetnumber="-1" />
+    <set_variable name="Auto AI Type" value="10.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Hegemony Bio Base" id_arme="46335dcd-926c-4e10-835c-023e2d73bbbc" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
@@ -3119,17 +3127,21 @@
     <set_variable name="Random Multiplier" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" integer="yes" />
     <set_variable name="Slingshot Array" value="1.0" integer="yes" />
+    <set_timer name="Slingshot Array" seconds="1" />
   </event>
   <event name="Kralien Slingshot Array 2" id_arme="a28fd121-cf88-48b0-80b8-5bbb80810e48" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_variable name="Slingshot Array" comparator="EQUALS" value="1.0" />
-    <set_relative_position name2=",," distance="5000*randMult" angle="Degrees" name1=".." />
+    <if_timer_finished name="Slingshot Array" />
+    <set_relative_position name2=",," distance="750*randMult" angle="Degrees" name1=".." />
     <set_variable name="Random Multiplier" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" integer="yes" />
     <set_variable name="Slingshot Array" value="2.0" integer="yes" />
+    <set_timer name="Slingshot Array" seconds="1" />
   </event>
   <event name="Kralien Slingshot Array 3" id_arme="748eb5cf-fabc-4a73-8f49-b4141eea283d" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_variable name="Slingshot Array" comparator="EQUALS" value="2.0" />
-    <set_relative_position name2="''" distance="5000*randMult" angle="Degrees" name1=".." />
+    <if_timer_finished name="Slingshot Array" />
+    <set_relative_position name2="''" distance="750*randMult" angle="Degrees" name1=".." />
     <set_ship_text name=",," newname="--" />
     <set_ship_text name="''" newname="--" />
     <set_ship_text name=".." newname="--" />
