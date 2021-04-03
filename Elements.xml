@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Random Elements" id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Random Coordinates" id_arme="7c7265dd-f0de-4d29-9f42-9f23d1e09a4e" parent_id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947">
     <if_variable name="Random Coordinates" comparator="EQUALS" value="1.0" />
@@ -188,6 +188,41 @@
     <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
     <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="--" />
     <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="--" />
+  </event>
+  <event name="11 - Skaraan Base" id_arme="5bfeaae4-6a1f-4dba-a797-5020993e0660" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="11.0" />
+    <set_object_property property="topSpeed" value="0" name="--" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Stealth" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Cloak" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="HET" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Warp" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Teleport" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Tractor" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="ShldDrain" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="ShldVamp" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="TeleBack" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="ShldReset" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiMine" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiTorp" />
+    <set_special name="--" ship="-1" captain="-1" ability="LowVis" />
+    <set_object_property property="surrenderChance" value="0" name="--" />
+    <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
+    <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="--" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="--" />
+  </event>
+  <event name="12 - Hegemony Base" id_arme="fb57931d-e8ff-4ef0-bb1b-8741031d8855" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="12.0" />
+    <set_object_property property="topSpeed" value="0" name="--" />
+    <set_object_property property="turnRate" value="0.006" name="--" />
+    <set_object_property property="surrenderChance" value="0" name="--" />
+    <clear_ai name="--" />
+    <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
+    <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="--" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="--" />
   </event>
   <folder_arme name="Non-Combat AI (50 - 99)" id_arme="78fa2f1b-700f-4a72-8254-4be22e7c74ac" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" />
   <event name="50 - Standard AI" id_arme="87dcee8f-8631-4b8c-b89d-962f69f74557" parent_id_arme="78fa2f1b-700f-4a72-8254-4be22e7c74ac">
@@ -6640,11 +6675,14 @@
   <event name="406 - Docking Port" id_arme="be394bee-b27a-46db-828e-f7212b3b0db2" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="406.0" />
     <set_object_property property="canBuild" value="0" name="--" />
-    <set_object_property property="missileStoresHoming" value="0" name="--" />
-    <set_object_property property="missileStoresNuke" value="0" name="--" />
-    <set_object_property property="missileStoresMine" value="0" name="--" />
-    <set_object_property property="missileStoresEMP" value="0" name="--" />
-    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresHoming" value="4" name="--" />
+    <set_object_property property="missileStoresNuke" value="5" name="--" />
+    <set_object_property property="missileStoresMine" value="3" name="--" />
+    <set_object_property property="missileStoresEMP" value="6" name="--" />
+    <set_object_property property="missileStoresPShock" value="2" name="--" />
+    <set_object_property property="missileStoresTag" value="1" name="--" />
+    <set_object_property property="missileStoresBeacon" value="6" name="--" />
+    <set_object_property property="missileStoresProbe" value="3" name="--" />
   </event>
   <event name="407 - Civilian Bases" id_arme="8872f213-f4b3-4dce-baff-279e7798df37" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="407.0" />
@@ -6697,7 +6735,7 @@
     <clear_ai name="--" />
     <set_variable name="Auto AI Type" value="0.0" integer="yes" />
   </event>
-  <event name="413 - Slingshot Antenna" id_arme="0760cb55-9aa0-44de-b726-9df8d43af691" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
+  <event name="413 - Slingshot Antenna" id_arme="3c1945ff-bda3-4ac2-a913-7256fdf841f6" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="413.0" />
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
@@ -7265,6 +7303,85 @@
     <clear_ai name="TSN Orpheus" />
     <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.0" name="TSN Orpheus" />
     <set_variable name="Random Direction" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Docking Ports (500 - 599)" id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" />
+  <event name="500 - Energy Only" id_arme="d899309b-70ae-4c73-b003-3d306851d990" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="500.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="0" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="0" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="0" name="--" />
+  </event>
+  <event name="501 - Light Ordnance" id_arme="e1c2d79b-e766-45c0-b739-e0275f85351f" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="501.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have ordnance available for resupply." />
+    <set_object_property property="missileStoresHoming" value="50" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="30" name="--" />
+    <set_object_property property="missileStoresPShock" value="40" name="--" />
+    <set_object_property property="missileStoresTag" value="10" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="0" name="--" />
+  </event>
+  <event name="502 - Heavy Ordnance" id_arme="c1af14ca-686f-4428-93fc-707928243147" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="502.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have ordnance available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="10" name="--" />
+    <set_object_property property="missileStoresMine" value="15" name="--" />
+    <set_object_property property="missileStoresEMP" value="30" name="--" />
+    <set_object_property property="missileStoresPShock" value="20" name="--" />
+    <set_object_property property="missileStoresTag" value="5" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="0" name="--" />
+  </event>
+  <event name="503 - Mining" id_arme="942dbb96-7041-4ef1-84ae-38e73c1337d7" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="503.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have mining equipment available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="50" name="--" />
+    <set_object_property property="missileStoresEMP" value="0" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="0" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="30" name="--" />
+  </event>
+  <event name="504 - Exploration" id_arme="35bdb4b4-6b8c-4a8a-90d3-f68d867d2388" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="504.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have exploration equipment available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="20" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="40" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="30" name="--" />
+  </event>
+  <event name="505 - Xeno Research" id_arme="bce0c4bc-8312-4f0c-8321-f5c05d661452" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="505.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have research equipment available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="0" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="40" name="--" />
+    <set_object_property property="missileStoresBeacon" value="50" name="--" />
+    <set_object_property property="missileStoresProbe" value="30" name="--" />
   </event>
   <folder_arme name="Random Name System" id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Generate Fleet Names" id_arme="2dd8bf7f-9203-4c1a-9bea-2a4d2d3c05a6" parent_id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" />
@@ -30959,7 +31076,7 @@
     <set_variable name="Ship8RateFCS" value="0.0" integer="yes" />
     <set_variable name="Enable FCS" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship1" id_arme="972624a9-7450-4d67-93da-8ae0e5e22871" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship1" id_arme="972624a9-7450-4d67-93da-8ae0e5e22871" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="2f7d39dd-aabc-4a92-91a7-42176b72246d" parent_id_arme="972624a9-7450-4d67-93da-8ae0e5e22871">
     <if_variable name="Refuel Ship1" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="0" comparator="LESS_EQUAL" value="981.0" />
@@ -31076,7 +31193,7 @@
     <set_variable name="Ship1RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip1PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship2" id_arme="99626f33-d79a-426a-884f-87d223ad1289" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship2" id_arme="99626f33-d79a-426a-884f-87d223ad1289" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="0a13e7c3-1bc5-429e-9dfe-badd6b4aba5a" parent_id_arme="99626f33-d79a-426a-884f-87d223ad1289">
     <if_variable name="Refuel Ship2" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="1" comparator="LESS_EQUAL" value="981.0" />
@@ -31194,7 +31311,7 @@
     <set_variable name="Ship2RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip2PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship3" id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship3" id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="e2ca2386-267f-4d16-be84-561361c3eb47" parent_id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf">
     <if_variable name="Refuel Ship3" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="2" comparator="LESS_EQUAL" value="981.0" />
@@ -31312,7 +31429,7 @@
     <set_variable name="Ship3RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip3PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship4" id_arme="41f8c1a7-c4d3-47e2-84da-63e5609ec11d" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship4" id_arme="41f8c1a7-c4d3-47e2-84da-63e5609ec11d" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="0f7f845b-e937-4d7f-b3fd-204602d045ab" parent_id_arme="41f8c1a7-c4d3-47e2-84da-63e5609ec11d">
     <if_variable name="Refuel Ship4" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="3" comparator="LESS_EQUAL" value="981.0" />
@@ -31430,7 +31547,7 @@
     <set_variable name="Ship4RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip4PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship5" id_arme="5c851141-e1dd-4626-b978-dffd54ae2782" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship5" id_arme="5c851141-e1dd-4626-b978-dffd54ae2782" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="25666586-a04e-4742-b681-75fd184f296a" parent_id_arme="5c851141-e1dd-4626-b978-dffd54ae2782">
     <if_variable name="Refuel Ship5" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="4" comparator="LESS_EQUAL" value="981.0" />
@@ -31548,7 +31665,7 @@
     <set_variable name="Ship5RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip5PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship6" id_arme="7538f096-38d9-4633-ad79-055747e909d7" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship6" id_arme="7538f096-38d9-4633-ad79-055747e909d7" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="dcee1fcd-4447-4f22-b9c8-a48da0859743" parent_id_arme="7538f096-38d9-4633-ad79-055747e909d7">
     <if_variable name="Refuel Ship6" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="5" comparator="LESS_EQUAL" value="981.0" />
@@ -31666,7 +31783,7 @@
     <set_variable name="Ship6RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip6PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship7" id_arme="06fae324-2781-4faa-8204-3f75c76dfc18" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship7" id_arme="06fae324-2781-4faa-8204-3f75c76dfc18" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="469e08cf-35b4-4f80-b25a-cc083c901707" parent_id_arme="06fae324-2781-4faa-8204-3f75c76dfc18">
     <if_variable name="Refuel Ship7" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="6" comparator="LESS_EQUAL" value="981.0" />
@@ -31784,7 +31901,7 @@
     <set_variable name="Ship7RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip7PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship8" id_arme="7404d119-ec09-4c04-91a6-3c130b484f2a" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship8" id_arme="7404d119-ec09-4c04-91a6-3c130b484f2a" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="2a12003a-a7c0-4816-995a-9574ce04ede8" parent_id_arme="7404d119-ec09-4c04-91a6-3c130b484f2a">
     <if_variable name="Refuel Ship8" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="7" comparator="LESS_EQUAL" value="981.0" />
@@ -31972,7 +32089,7 @@
     <set_variable name="Ship1Level" value="Ship1Level - 2" integer="yes" />
     <set_timer name="Ship1 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="1dd130c6-298f-4023-978d-a64f0df727d7" parent_id_arme="1409a1db-5754-4a7f-89b8-7473d001a60e" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="1dd130c6-298f-4023-978d-a64f0df727d7" parent_id_arme="1409a1db-5754-4a7f-89b8-7473d001a60e" />
   <event name="Create Ship1 Monitor" id_arme="97a8ad76-37d0-4605-a526-1d254c4de429" parent_id_arme="1dd130c6-298f-4023-978d-a64f0df727d7">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="0" />
@@ -32186,7 +32303,7 @@
     <set_variable name="Ship2Level" value="Ship2Level - 2" integer="yes" />
     <set_timer name="Ship2 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="19fdc565-6bc6-4ce9-b7dd-e254750d03ea" parent_id_arme="8cf7129c-a432-4275-a256-61699e939c1e" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="19fdc565-6bc6-4ce9-b7dd-e254750d03ea" parent_id_arme="8cf7129c-a432-4275-a256-61699e939c1e" />
   <event name="Create Ship2 Monitor" id_arme="8d955054-62c1-4e88-a690-7c7924154b0b" parent_id_arme="19fdc565-6bc6-4ce9-b7dd-e254750d03ea">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="1" />
@@ -32400,7 +32517,7 @@
     <set_variable name="Ship3Level" value="Ship3Level - 2" integer="yes" />
     <set_timer name="Ship3 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="6549c055-b946-42db-a0ff-ad0138c88bd8" parent_id_arme="847b8649-29b2-4633-b0b6-9100fb7d408a" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="6549c055-b946-42db-a0ff-ad0138c88bd8" parent_id_arme="847b8649-29b2-4633-b0b6-9100fb7d408a" />
   <event name="Create Ship3 Monitor" id_arme="54776a1d-f4c6-4522-b51a-b791c0111300" parent_id_arme="6549c055-b946-42db-a0ff-ad0138c88bd8">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="2" />
@@ -32572,7 +32689,7 @@
     <if_distance player_slot1="2" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship3RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship4 Radiation" id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship4 Radiation" id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="e2dcb4f8-c9a9-455f-b719-fbad2af7a88f" parent_id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" />
   <event name="Shield Failure" id_arme="d6798294-27d1-4a90-a717-3259c24c14d4" parent_id_arme="e2dcb4f8-c9a9-455f-b719-fbad2af7a88f">
     <if_variable name="Ship4Monitor" comparator="EQUALS" value="1.0" />
@@ -32614,7 +32731,7 @@
     <set_variable name="Ship4Level" value="Ship4Level - 2" integer="yes" />
     <set_timer name="Ship4 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="5df5d641-bb44-4a03-8f4b-ad141854520d" parent_id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="5df5d641-bb44-4a03-8f4b-ad141854520d" parent_id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" />
   <event name="Create Ship4 Monitor" id_arme="8764a9d5-c6a9-4c73-be0f-e6e5cb6c527a" parent_id_arme="5df5d641-bb44-4a03-8f4b-ad141854520d">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="3" />
@@ -32786,7 +32903,7 @@
     <if_distance player_slot1="3" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship4RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship5 Radiation" id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship5 Radiation" id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="4191ef9e-075c-4fe1-8c68-e33e715e0bef" parent_id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" />
   <event name="Shield Failure" id_arme="b332d074-cb10-43a6-a9b6-821f3abfcabc" parent_id_arme="4191ef9e-075c-4fe1-8c68-e33e715e0bef">
     <if_variable name="Ship5Monitor" comparator="EQUALS" value="1.0" />
@@ -32828,7 +32945,7 @@
     <set_variable name="Ship5Level" value="Ship5Level - 2" integer="yes" />
     <set_timer name="Ship5 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="9ea81f38-66b8-4a8d-a817-2844d6033595" parent_id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="9ea81f38-66b8-4a8d-a817-2844d6033595" parent_id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" />
   <event name="Create Ship5 Monitor" id_arme="028d5984-0c71-447c-85b6-ce6b6728dbef" parent_id_arme="9ea81f38-66b8-4a8d-a817-2844d6033595">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="4" />
@@ -33000,7 +33117,7 @@
     <if_distance player_slot1="4" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship5RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship6 Radiation" id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship6 Radiation" id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="c3af1a11-ae9a-4322-97ad-c7b96a244fe3" parent_id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" />
   <event name="Shield Failure" id_arme="3e2504a1-5ffd-46e9-a36d-b7585bafa470" parent_id_arme="c3af1a11-ae9a-4322-97ad-c7b96a244fe3">
     <if_variable name="Ship6Monitor" comparator="EQUALS" value="1.0" />
@@ -33042,7 +33159,7 @@
     <set_variable name="Ship6Level" value="Ship6Level - 2" integer="yes" />
     <set_timer name="Ship6 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="f95faa27-afd6-4389-a60c-dd2ba31d0d8b" parent_id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="f95faa27-afd6-4389-a60c-dd2ba31d0d8b" parent_id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" />
   <event name="Create Ship6 Monitor" id_arme="0879f8d8-655c-46bb-a32b-dbf3e8c33831" parent_id_arme="f95faa27-afd6-4389-a60c-dd2ba31d0d8b">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="5" />
@@ -33214,7 +33331,7 @@
     <if_distance player_slot1="5" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship6RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship7 Radiation" id_arme="babe0460-0b20-4931-911b-497175ca08e0" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship7 Radiation" id_arme="babe0460-0b20-4931-911b-497175ca08e0" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="f7e1006e-2888-40ce-80a4-f28d8aa6a092" parent_id_arme="babe0460-0b20-4931-911b-497175ca08e0" />
   <event name="Shield Failure" id_arme="d476f98f-2e7e-4bf5-9f0b-03bad96c3b0e" parent_id_arme="f7e1006e-2888-40ce-80a4-f28d8aa6a092">
     <if_variable name="Ship7Monitor" comparator="EQUALS" value="1.0" />
@@ -33256,7 +33373,7 @@
     <set_variable name="Ship7Level" value="Ship7Level - 2" integer="yes" />
     <set_timer name="Ship7 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="d3acbd90-3760-4938-8edb-cafe0537a0ed" parent_id_arme="babe0460-0b20-4931-911b-497175ca08e0" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="d3acbd90-3760-4938-8edb-cafe0537a0ed" parent_id_arme="babe0460-0b20-4931-911b-497175ca08e0" />
   <event name="Create Ship7 Monitor" id_arme="39fe83f5-797a-4d53-8370-f7a5bfe44b57" parent_id_arme="d3acbd90-3760-4938-8edb-cafe0537a0ed">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="6" />
@@ -33428,7 +33545,7 @@
     <if_distance player_slot1="6" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship7RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship8 Radiation" id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship8 Radiation" id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="2868b2f0-2291-43d0-b717-4d2d2a271436" parent_id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" />
   <event name="Shield Failure" id_arme="0aaad059-aef8-4324-989f-e1e0ae123b1d" parent_id_arme="2868b2f0-2291-43d0-b717-4d2d2a271436">
     <if_variable name="Ship8Monitor" comparator="EQUALS" value="1.0" />
@@ -33470,7 +33587,7 @@
     <set_variable name="Ship8Level" value="Ship8Level - 2" integer="yes" />
     <set_timer name="Ship8 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="f886651e-6f93-4705-91c8-206c4fb6955b" parent_id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="f886651e-6f93-4705-91c8-206c4fb6955b" parent_id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" />
   <event name="Create Ship8 Monitor" id_arme="a00e2d2f-5529-4855-b0e1-260157d3dc87" parent_id_arme="f886651e-6f93-4705-91c8-206c4fb6955b">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="7" />
@@ -34426,7 +34543,7 @@
     <set_variable name="GM Backup" value="1.0" />
   </event>
   <folder_arme name="Edge to Edge Transition" id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
-  <folder_arme name="Grid A Transition" id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid A Transition" id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="c66cdc66-de56-4ab8-aa72-a997975b5076" parent_id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be">
     <if_exists player_slot="0" />
     <if_object_property property="positionX" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34539,7 +34656,7 @@
     <set_variable name="Ship8 Ready Grid A" value="0.0" />
     <set_variable name="Grid A Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="5e9b6afe-48dc-497f-b485-f925fafc75be" parent_id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="5e9b6afe-48dc-497f-b485-f925fafc75be" parent_id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" />
   <event name="Grid A Transition Enabled" id_arme="baa3d82f-278a-49c4-bd51-ed1d1e411fad" parent_id_arme="5e9b6afe-48dc-497f-b485-f925fafc75be">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid A" comparator="EQUALS" value="1.0" />
@@ -34575,7 +34692,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Grid E Transition" id_arme="55c0a4de-0319-4073-945c-f9139a792254" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid E Transition" id_arme="55c0a4de-0319-4073-945c-f9139a792254" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="e896d18d-e08d-4b97-b9ba-beb50221dc21" parent_id_arme="55c0a4de-0319-4073-945c-f9139a792254">
     <if_exists player_slot="0" />
     <if_object_property property="positionX" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34688,7 +34805,7 @@
     <set_variable name="Ship8 Ready Grid E" value="0.0" />
     <set_variable name="Grid E Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="d49f0eb4-c720-4193-ad73-86e33f693ddc" parent_id_arme="55c0a4de-0319-4073-945c-f9139a792254" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="d49f0eb4-c720-4193-ad73-86e33f693ddc" parent_id_arme="55c0a4de-0319-4073-945c-f9139a792254" />
   <event name="Grid E Transition Enabled" id_arme="9257421c-fb55-4bd5-9592-601d2a78d2f4" parent_id_arme="d49f0eb4-c720-4193-ad73-86e33f693ddc">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid E" comparator="EQUALS" value="1.0" />
@@ -34724,7 +34841,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Grid 1 Transition" id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid 1 Transition" id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="6d63827d-332d-4590-b19d-e6c87bda62c5" parent_id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca">
     <if_exists player_slot="0" />
     <if_object_property property="positionZ" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34837,7 +34954,7 @@
     <set_variable name="Ship8 Ready Grid 1" value="0.0" />
     <set_variable name="Grid 1 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="ca70e7a4-59e2-4492-bf1c-611a107cdad6" parent_id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="ca70e7a4-59e2-4492-bf1c-611a107cdad6" parent_id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" />
   <event name="Grid 1 Transition Enabled" id_arme="d20f5fcc-eff1-4376-9856-5865448f83e6" parent_id_arme="ca70e7a4-59e2-4492-bf1c-611a107cdad6">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid 1" comparator="EQUALS" value="1.0" />
@@ -34873,7 +34990,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Grid 5 Transition" id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid 5 Transition" id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="384f6633-6334-4046-ae3c-6d00d35707d9" parent_id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b">
     <if_exists player_slot="0" />
     <if_object_property property="positionZ" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34986,7 +35103,7 @@
     <set_variable name="Ship8 Ready Grid 5" value="0.0" />
     <set_variable name="Grid 5 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="c3cb75c6-e8f2-46ef-aaac-9d231ade6cc8" parent_id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="c3cb75c6-e8f2-46ef-aaac-9d231ade6cc8" parent_id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" />
   <event name="Grid 5 Transition Enabled" id_arme="cb5e3c0e-18ab-4a25-95a7-79c3674190f4" parent_id_arme="c3cb75c6-e8f2-46ef-aaac-9d231ade6cc8">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid 5" comparator="EQUALS" value="1.0" />
@@ -35022,7 +35139,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner A1 Transition" id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner A1 Transition" id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="731a01f9-c56c-443d-b7cf-5169dae4c02d" parent_id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="100000.0" centerY="0" centerZ="0" radius="3000" />
@@ -35119,7 +35236,7 @@
     <set_variable name="Ship8 Ready Corner A1" value="0.0" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="b771b02e-5cde-462f-8863-f3de13af53c6" parent_id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="b771b02e-5cde-462f-8863-f3de13af53c6" parent_id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" />
   <event name="Corner A1 Transition Enabled" id_arme="5cea4253-babb-45e7-8efc-36c1b9cf9e47" parent_id_arme="b771b02e-5cde-462f-8863-f3de13af53c6">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner A1" comparator="EQUALS" value="1.0" />
@@ -35163,7 +35280,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner A5 Transition" id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner A5 Transition" id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="2344fbec-7ea8-47e9-962c-10b0b1a1e492" parent_id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="0" centerY="0" centerZ="0" radius="3000" />
@@ -35260,7 +35377,7 @@
     <set_variable name="Ship8 Ready Corner A5" value="0.0" />
     <set_variable name="Corner A5 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="a5b75549-ac04-40f8-b9f3-867e3fdd4dfc" parent_id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="a5b75549-ac04-40f8-b9f3-867e3fdd4dfc" parent_id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" />
   <event name="Corner A5 Transition Enabled" id_arme="9827d8d5-1fff-4937-8606-9d1b9965b260" parent_id_arme="a5b75549-ac04-40f8-b9f3-867e3fdd4dfc">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner A5" comparator="EQUALS" value="1.0" />
@@ -35304,7 +35421,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner E1 Transition" id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner E1 Transition" id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="123df88c-5581-4978-8f69-b72a7fe07852" parent_id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="100000" centerY="0" centerZ="100000" radius="3000" />
@@ -35401,7 +35518,7 @@
     <set_variable name="Ship8 Ready Corner E1" value="0.0" />
     <set_variable name="Corner E1 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="abfd8793-41bc-49d1-990d-8618c2f75807" parent_id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="abfd8793-41bc-49d1-990d-8618c2f75807" parent_id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" />
   <event name="Corner E1 Transition Enabled" id_arme="fae8e535-1381-4e49-b436-14fe865be053" parent_id_arme="abfd8793-41bc-49d1-990d-8618c2f75807">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner E1" comparator="EQUALS" value="1.0" />
@@ -35445,7 +35562,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner E5 Transition" id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner E5 Transition" id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="d42050e8-d1d1-47bf-bbeb-f1d4899c84e3" parent_id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="0" centerY="0" centerZ="100000" radius="3000" />
@@ -35542,7 +35659,7 @@
     <set_variable name="Ship8 Ready Corner E5" value="0.0" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="f057a1dc-7f35-4d79-9997-13cfbbebf3b2" parent_id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="f057a1dc-7f35-4d79-9997-13cfbbebf3b2" parent_id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" />
   <event name="Corner E5 Transition Enabled" id_arme="a0da528e-01b0-4bc6-919d-b1790c8452bd" parent_id_arme="f057a1dc-7f35-4d79-9997-13cfbbebf3b2">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner E5" comparator="EQUALS" value="1.0" />
@@ -43404,7 +43521,7 @@
     <set_variable name="Ship8DamageType" value="0.0" integer="yes" />
     <set_timer name="Ship8DamageTimer" seconds="1" />
   </event>
-  <folder_arme name="Unstable Space" id_arme="c6be8c58-7d80-47b2-b306-c53b53f432b8" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <folder_arme name="Unstable Space" id_arme="c6be8c58-7d80-47b2-b306-c53b53f432b8" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Gravitational Waves" id_arme="1db5669a-8ab8-4fe1-ac96-45d492115ed5" parent_id_arme="c6be8c58-7d80-47b2-b306-c53b53f432b8" />
   <event name="Set Gravitation Waves" id_arme="13f56766-b215-4eed-b716-e1db5371738e" parent_id_arme="1db5669a-8ab8-4fe1-ac96-45d492115ed5">
     <if_variable name="Gravitational Wave Detected" comparator="EQUALS" value="1.0" />
@@ -43733,8 +43850,8 @@
     <addto_object_property value="(0-zStrength)" property="positionZ" player_slot="7" />
     <addto_object_property value="xStrength" property="positionX" player_slot="7" />
   </event>
-  <folder_arme name="Blackholes" id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" parent_id_arme="c6be8c58-7d80-47b2-b306-c53b53f432b8" expanded_arme="" />
-  <folder_arme name="Static Blackholes" id_arme="4fbfe552-bd96-4b98-b440-021daec5f199" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" expanded_arme="" />
+  <folder_arme name="Blackholes" id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" parent_id_arme="c6be8c58-7d80-47b2-b306-c53b53f432b8" />
+  <folder_arme name="Static Blackholes" id_arme="4fbfe552-bd96-4b98-b440-021daec5f199" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" />
   <event name="Remove Blackholes" id_arme="5ce1937f-1dbb-4f59-9f9f-09f09a2ae215" parent_id_arme="4fbfe552-bd96-4b98-b440-021daec5f199">
     <if_variable name="Static_BH" comparator="EQUALS" value="3.0" />
     <destroy name="Static Blackhole 0.0" />
@@ -43776,7 +43893,7 @@
     <warning_popup_message message="Distortions Mapped" consoles="MS" />
     <set_variable name="Static_BH" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Dynamic Blackholes" id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" expanded_arme="" />
+  <folder_arme name="Dynamic Blackholes" id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" />
   <event name="Remove Blackholes" id_arme="00ba7867-be0e-409f-8238-e515207b275d" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2">
     <if_variable name="Dynamic_BH" comparator="EQUALS" value="3.0" />
     <destroy name="Dynamic Blackhole 0.0" />
