@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
   <folder_arme name="Random Elements" id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Random Coordinates" id_arme="7c7265dd-f0de-4d29-9f42-9f23d1e09a4e" parent_id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947">
     <if_variable name="Random Coordinates" comparator="EQUALS" value="1.0" />
@@ -7744,7 +7744,7 @@
     <set_ship_text name="--" newname="Z|firstnumber||secondnumber|" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Ship Status" id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="Ship Status" id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
   <event name="All Inactive" id_arme="970521f0-180e-45e2-8cf8-693a4c3b200b" parent_id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1">
     <if_variable name="Sandbox Activation" comparator="EQUALS" value="0.0" />
     <if_variable name="shipCount" comparator="EQUALS" value="0.0" />
@@ -11183,9 +11183,9 @@
     <set_variable name="Ship8 Status" value="4.0" integer="yes" />
     <set_variable name="Ship8CommsMenu" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Track Ship Status" id_arme="1160c145-db31-4c90-99e1-907d9e1bb8bc" parent_id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1" />
-  <folder_arme name="Ordnance Tracker" id_arme="b3425a71-9d46-47b4-b88c-60320d9a6e56" parent_id_arme="1160c145-db31-4c90-99e1-907d9e1bb8bc" />
-  <folder_arme name="Ship1" id_arme="2c027645-c62e-485b-bf7e-87f3f2140426" parent_id_arme="b3425a71-9d46-47b4-b88c-60320d9a6e56" />
+  <folder_arme name="Track Ship Status" id_arme="1160c145-db31-4c90-99e1-907d9e1bb8bc" parent_id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1" expanded_arme="" />
+  <folder_arme name="Ordnance Tracker" id_arme="b3425a71-9d46-47b4-b88c-60320d9a6e56" parent_id_arme="1160c145-db31-4c90-99e1-907d9e1bb8bc" expanded_arme="" />
+  <folder_arme name="Ship1" id_arme="2c027645-c62e-485b-bf7e-87f3f2140426" parent_id_arme="b3425a71-9d46-47b4-b88c-60320d9a6e56" expanded_arme="" />
   <event name="Increase Homings" id_arme="2a5181be-1cd2-4c7d-94ab-62289454df50" parent_id_arme="2c027645-c62e-485b-bf7e-87f3f2140426">
     <if_exists player_slot="0" />
     <if_object_property property="countHoming" player_slot="0" comparator="GREATER" value="Ship1HomingCurrent" />
@@ -44223,10 +44223,14 @@
   <event name="End Mission" id_arme="3e9b80be-6696-467c-ba4f-26a41d2ae9ee" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
     <if_variable name="Mission End" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="Mission End" />
-    <log text="Ship1HomingCurrent is |Ship1HomingCurrent|" />
-    <log text="Ship2HomingCurrent is |Ship2HomingCurrent|" />
-    <log text="Ship3HomingCurrent is |Ship3HomingCurrent|" />
-    <log text="Ship4HomingCurrent is |Ship4HomingCurrent|" />
+    <log text="Ship1 Ordnance: |Ship1HomingCurrent|, |Ship1NukeCurrent|, |Ship1MineCurrent|, |Ship1EMPCurrent|, |Ship1ShkCurrent|, |Ship1BeaCurrent|, |Ship1ProCurrent|, |Ship1TagCurrent|" />
+    <log text="Ship2 Ordnance: |Ship2HomingCurrent|, |Ship2NukeCurrent|, |Ship2MineCurrent|, |Ship2EMPCurrent|, |Ship2ShkCurrent|, |Ship2BeaCurrent|, |Ship2ProCurrent|, |Ship2TagCurrent|" />
+    <log text="Ship3 Ordnance: |Ship3HomingCurrent|, |Ship3NukeCurrent|, |Ship3MineCurrent|, |Ship3EMPCurrent|, |Ship3ShkCurrent|, |Ship3BeaCurrent|, |Ship3ProCurrent|, |Ship3TagCurrent|" />
+    <log text="Ship4 Ordnance: |Ship4HomingCurrent|, |Ship4NukeCurrent|, |Ship4MineCurrent|, |Ship4EMPCurrent|, |Ship4ShkCurrent|, |Ship4BeaCurrent|, |Ship4ProCurrent|, |Ship4TagCurrent|" />
+    <log text="Ship5 Ordnance: |Ship5HomingCurrent|, |Ship5NukeCurrent|, |Ship5MineCurrent|, |Ship5EMPCurrent|, |Ship5ShkCurrent|, |Ship5BeaCurrent|, |Ship5ProCurrent|, |Ship5TagCurrent|" />
+    <log text="Ship6 Ordnance: |Ship6HomingCurrent|, |Ship6NukeCurrent|, |Ship6MineCurrent|, |Ship6EMPCurrent|, |Ship6ShkCurrent|, |Ship6BeaCurrent|, |Ship6ProCurrent|, |Ship6TagCurrent|" />
+    <log text="Ship7 Ordnance: |Ship7HomingCurrent|, |Ship7NukeCurrent|, |Ship7MineCurrent|, |Ship7EMPCurrent|, |Ship7ShkCurrent|, |Ship7BeaCurrent|, |Ship7ProCurrent|, |Ship7TagCurrent|" />
+    <log text="Ship8 Ordnance: |Ship8HomingCurrent|, |Ship8NukeCurrent|, |Ship8MineCurrent|, |Ship8EMPCurrent|, |Ship8ShkCurrent|, |Ship8BeaCurrent|, |Ship8ProCurrent|, |Ship8TagCurrent|" />
     <end_mission />
   </event>
 </mission_data>
