@@ -1,7 +1,7 @@
 <mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <set_variable name="Coordinate X" value="69.0" integer="yes" />
-    <set_variable name="Coordinate Y" value="93.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="120.0" integer="yes" />
     <set_variable name="Alignment" value="1.0" integer="yes" />
   </start>
   <folder_arme name="Onwia System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
