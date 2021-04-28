@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="120.0" integer="yes" />
     <set_variable name="Alignment" value="1.0" integer="yes" />
   </start>
-  <folder_arme name="Onwia System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
-  <folder_arme name="Onwia Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
-  <folder_arme name="Onwia Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
+  <folder_arme name="Onwia System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Onwia Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Onwia Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" expanded_arme="" />
   <event name="Onwia Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/Onwia System" />
@@ -19,7 +19,7 @@
   <event name="Onwia System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_gm_button text="Lower Arc/Onwia System" />
     <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
-    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="102.0" integer="yes" />
     <set_variable name="Onwia System" value="1.0" integer="yes" />
     <set_variable name="GM Mode" value="3.0" integer="yes" />
   </event>
