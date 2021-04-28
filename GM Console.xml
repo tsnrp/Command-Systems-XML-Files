@@ -568,7 +568,7 @@
     <clear_gm_button text="PS Cancel" />
     <set_variable name="CyclePlayerSide" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Side Selected" id_arme="0efe80fd-70ab-4f13-8164-d17edb7f307c" parent_id_arme="59f773cc-4d91-40b9-b9a7-4695c7d34e0d" expanded_arme="" />
+  <folder_arme name="Side Selected" id_arme="0efe80fd-70ab-4f13-8164-d17edb7f307c" parent_id_arme="59f773cc-4d91-40b9-b9a7-4695c7d34e0d" />
   <event name="Cancelled" id_arme="5cf2cb4e-b418-4072-9ebf-629b209b8adc" parent_id_arme="0efe80fd-70ab-4f13-8164-d17edb7f307c">
     <if_gm_button text="PS Cancel" />
     <set_variable name="CyclePlayerSide" value="2.0" integer="yes" />
@@ -40435,8 +40435,8 @@
     <set_variable name="ScanPoint" value="1.0" integer="yes" />
     <set_variable name="ScanSignature" value="65.0" integer="yes" />
   </event>
-  <folder_arme name="Moving Signatures" id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" parent_id_arme="9ff0c7aa-f5c0-488c-9554-1d3d2df80622" expanded_arme="" />
-  <folder_arme name="Skaraan" id_arme="dafa600b-cef6-4780-92b5-0ac940996577" parent_id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" expanded_arme="" />
+  <folder_arme name="Moving Signatures" id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" parent_id_arme="9ff0c7aa-f5c0-488c-9554-1d3d2df80622" />
+  <folder_arme name="Skaraan" id_arme="dafa600b-cef6-4780-92b5-0ac940996577" parent_id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" />
   <event name="Heading 0" id_arme="80f49316-8814-4fdd-9ba6-4ef215cc71d2" parent_id_arme="dafa600b-cef6-4780-92b5-0ac940996577">
     <if_gm_button text="Mobile Signature\Skaraan\Heading 0" />
     <create type="genericMesh" use_gm_position="" name="(|ScanPointNumber|)" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.1" colorGreen="0.5" colorBlue="0.1" />
@@ -40455,7 +40455,7 @@
     <create type="genericMesh" use_gm_position="" angle="0" name="(|ScanPointNumber|)" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.1" colorGreen="0.5" colorBlue="0.1" />
     <set_variable name="ScanPoint" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Signature Readings" id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" parent_id_arme="057c8e7f-7f30-4c9a-a7e6-21a0335d87d7" expanded_arme="" />
+  <folder_arme name="Signature Readings" id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" parent_id_arme="057c8e7f-7f30-4c9a-a7e6-21a0335d87d7" />
   <folder_arme name="TSN Signatures" id_arme="a3ba9a1d-8974-4814-bc1e-49e0a2fbca22" parent_id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" />
   <event name="TSN Energy Signature" id_arme="34eb9755-40c1-4866-8a0b-daf1f4b8838e" parent_id_arme="a3ba9a1d-8974-4814-bc1e-49e0a2fbca22">
     <if_variable name="ScanPoint" comparator="EQUALS" value="2.0" />
@@ -40638,7 +40638,7 @@
     <set_variable name="ScanSignature" value="0.0" integer="yes" />
     <set_variable name="ScanPoint" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Mobile Signatures" id_arme="0cbf4caf-53fe-4785-87a6-3945453ef149" parent_id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" expanded_arme="" />
+  <folder_arme name="Mobile Signatures" id_arme="0cbf4caf-53fe-4785-87a6-3945453ef149" parent_id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" />
   <event name="Heading 0" id_arme="c392ccf4-53e8-4515-b1c1-0b085db227ee" parent_id_arme="0cbf4caf-53fe-4785-87a6-3945453ef149">
     <if_variable name="ScanPoint" comparator="EQUALS" value="2.0" />
     <if_variable name="ScanSignature" comparator="EQUALS" value="100.0" />
@@ -41288,7 +41288,7 @@
     <set_gm_button text="Random Damage\Set All On-" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Repair Damage" id_arme="9eead1e0-2012-4d71-8af1-17f9ac9fab25" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" expanded_arme="" />
+  <folder_arme name="Repair Damage" id_arme="9eead1e0-2012-4d71-8af1-17f9ac9fab25" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" />
   <event name="Repair Beams" id_arme="f57817ed-001b-4aef-aec5-c53e8d4d6d42" parent_id_arme="9eead1e0-2012-4d71-8af1-17f9ac9fab25">
     <if_gm_button text="Repair Ship\Repair Beams" />
     <set_player_grid_damage value="0.0" use_gm_selection=" " index="0" systemType="systemBeam" countFrom="front" />
