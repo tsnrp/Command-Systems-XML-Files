@@ -1475,8 +1475,8 @@
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="enemy" x="39286.0" y="0.0" z="50803.0" name="Dred Falsu" hullID="1008" sideValue="sectorSide" />
-    <create type="enemy" x="28572.0" y="0.0" z="45044.0" angle="0" name="Ekka Shipyards" hullID="1053" sideValue="sectorSide" fleetnumber="-1" />
-    <create type="enemy" x="27902.0" y="0.0" z="53214.0" angle="0" name="Danil Denabite" hullID="1008" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="28572.0" y="0.0" z="45044.0" angle="0" name="Ekka Shipyards" hullID="1358" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="27902.0" y="0.0" z="53214.0" angle="0" name="Danil Denabite" hullID="1356" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="50670.0" y="0.0" z="61517.0" angle="0" name="Sensor Array 1" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="12634.0" y="0.0" z="62991.0" angle="0" name="Sensor Array 3" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="14911.0" y="0.0" z="44508.0" angle="0" name="Sensor Array 2" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
@@ -1488,6 +1488,21 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <clear_ai name="Dred Falsu" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Stealth" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="LowVis" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Cloak" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="HET" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Warp" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Teleport" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="Tractor" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="Drones" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="AntiMine" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="AntiTorp" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="ShldDrain" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="ShldVamp" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="TeleBack" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="ShldReset" />
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="38548f59-928f-4275-af97-e807357e2b2a" parent_id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5">
@@ -1856,7 +1871,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="16" />
     <create type="genericMesh" x="28974.0" y="0.0" z="59910.0" name="No-Ma Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No-Ma Transit" hullID="1005" sideValue="sectorSide" />
+    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No-Ma Transit" hullID="1357" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
