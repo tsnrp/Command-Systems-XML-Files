@@ -303,7 +303,7 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" name="Acantha Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="46950.0" y="0.0" z="49564.0" name="Acantha Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="neutral" x="33125.0" y="0.0" z="78392.0" name="Eshi Directorate" hullID="1005" sideValue="sectorSide" />
     <create type="neutral" x="15715.0" y="0.0" z="46919.0" name="Hagma Base" hullID="1005" sideValue="sectorSide" />
     <create type="neutral" x="73170.0" y="0.0" z="79196.0" name="Edi Edi Base" hullID="1007" sideValue="sectorSide" />
