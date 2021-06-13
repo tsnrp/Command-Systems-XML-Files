@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="GM Main Menu" id_arme="605a7c3f-76b5-4953-bb43-aa50abc3f88b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
     <if_variable name="GM Menu" comparator="EQUALS" value="1.0" />
@@ -46695,7 +46695,7 @@
     <if_gm_button text="Reset Comms" />
     <set_variable name="CycleCommsMenu" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Custom Keys" id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="Custom Keys" id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Custom Keys Menu" id_arme="9c078e16-5385-44db-ab15-563fd2dff7f1" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87">
     <if_timer_finished name="GM Menu" />
     <if_variable name="GM Menu" comparator="EQUALS" value="12.0" />
@@ -46755,7 +46755,7 @@
     <clear_gm_button text="Menu 1\Custom 1B" />
     <clear_gm_button text="Menu 1\Custom 1A" />
   </event>
-  <folder_arme name="Menu 1" id_arme="0fc9dd71-2783-4713-a773-bca1116e079d" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" expanded_arme="" />
+  <folder_arme name="Menu 1" id_arme="0fc9dd71-2783-4713-a773-bca1116e079d" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" />
   <event name="Custom 1A" id_arme="7cbbe37d-6ec1-46fe-808c-f304306ad0a4" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1A" />
     <create type="enemy" use_gm_position="" name="TSN Blunderbuss" hullID="4" sideValue="1" fleetnumber="-1" />
