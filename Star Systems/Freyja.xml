@@ -9,15 +9,15 @@
   <folder_arme name="Freyja Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="Freyja Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
-    <set_gm_button text="Upper Arc/Freyja System" />
+    <set_gm_button text="Lower Arc/Freyja System" />
     <set_variable name="Freyja Gate" value="1.0" integer="yes" />
   </event>
   <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
-    <clear_gm_button text="Upper Arc/Freyja System" />
+    <clear_gm_button text="Lower Arc/Freyja System" />
   </event>
   <event name="Freyja System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
-    <if_gm_button text="Upper Arc/Freyja System" />
+    <if_gm_button text="Lower Arc/Freyja System" />
     <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
     <set_variable name="Sector" value="102.0" integer="yes" />
     <set_variable name="Freyja System" value="1.0" integer="yes" />
@@ -459,7 +459,35 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <event name="Arrival From Corus" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
+  <folder_arme name="Sector Entities" id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" />
+  <event name="Generate Sector Entities" id_arme="874ee4b6-2c61-4a13-875d-3de2780a9020" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="62782.0" y="0.0" z="64455.0" name="Gate Control &amp; Customs" hullID="1001" sideValue="sectorSide" />
+    <create type="genericMesh" x="40568.0" y="0.0" z="36995.0" name="Corus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="71a32eaf-ef73-4630-b31a-522fdb1a44ee" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="targetGate Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="targetGate Gate" />
+    <set_object_property property="angle" value="4.71238898" name="targetGate Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="targetGate Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f6cb6274-798f-42f6-8d76-1c1cc456cfcf" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja III" />
+    <destroy name="Gate Control &amp; Customs" />
+    <destroy name="Corus Gate" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Corus" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
     <if_variable name="Corus to Freyja" comparator="EQUALS" value="1.0" />
@@ -481,34 +509,6 @@
     <set_object_property property="angle" value="3.141592654" player_slot="6" />
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Corus to Freyja" value="0.0" />
-  </event>
-  <folder_arme name="Sector Entities" id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" />
-  <event name="Generate Sector Entities" id_arme="874ee4b6-2c61-4a13-875d-3de2780a9020" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
-    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
-    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="62782.0" y="0.0" z="64455.0" name="Gate Control &amp; Customs" hullID="1001" sideValue="sectorSide" />
-    <create type="genericMesh" x="40568.0" y="0.0" z="36995.0" name="Corus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <set_variable name="Sector Entities" value="2.0" />
-  </event>
-  <event name="Settings" id_arme="71a32eaf-ef73-4630-b31a-522fdb1a44ee" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
-    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
-    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
-    <set_object_property property="artScale" value="1.0" name="targetGate Gate" />
-    <set_object_property property="pushRadius" value="0.0" name="targetGate Gate" />
-    <set_object_property property="angle" value="4.71238898" name="targetGate Gate" />
-    <set_object_property property="rollDelta" value="0.3" name="targetGate Gate" />
-    <set_variable name="Sector Entities" value="3.0" />
-  </event>
-  <event name="Destroy Sector Entities" id_arme="f6cb6274-798f-42f6-8d76-1c1cc456cfcf" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
-    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
-    <destroy name="Freyja III" />
-    <destroy name="Gate Control &amp; Customs" />
-    <destroy name="Corus Gate" />
-    <set_variable name="Freyja System" value="System" integer="yes" />
-    <set_variable name="Sector Entities" value="0.0" />
   </event>
   <folder_arme name="Freyja Sector IV" id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Freyja Sector IV" id_arme="722c9594-7acc-4854-85eb-84bcb64ad6e8" parent_id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6">
@@ -730,11 +730,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="neutral" x="76959.0" y="0.0" z="41795.0" name="Mendeleyjev Base" raceKeys="TSN" hullKeys="Science Base" sideValue="sectorSide" />
+    <create type="neutral" x="76959.0" y="0.0" z="41795.0" name="Mendeleyjev Base" hullID="1004" sideValue="sectorSide" />
     <create type="neutral" x="42500.0" y="0.0" z="49500.0" name="Freyja Control" hullID="1002" sideValue="sectorSide" />
-    <create type="neutral" x="42500.0" y="0.0" z="64500.0" angle="180" name="WP-07" raceKeys="TSN" hullKeys="Weapons Platform" sideValue="sectorSide" />
-    <create type="neutral" x="42500.0" y="0.0" z="34500.0" angle="0" name="WP-06" raceKeys="TSN" hullKeys="Weapons Platform" sideValue="sectorSide" />
-    <create type="neutral" x="50726.0" y="0.0" z="44920.0" angle="0" name="SY-19" raceKeys="TSN" hullKeys="Ship Yard" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="64500.0" angle="180" name="WP-07" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="34500.0" angle="0" name="WP-06" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="50726.0" y="0.0" z="44920.0" angle="0" name="SY-19" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="73387.0" y="0.0" z="30409.0" angle="165" name="Dikro Mining" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="72159.0" y="0.0" z="35320.0" angle="0" name="Dikro Gasses" hullID="1050" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -749,8 +749,8 @@
     <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
     <destroy name="Freyja V" />
     <destroy name="Mendeleyjev Base" />
-    <destroy name="Dicro Processing" />
-    <destroy name="Dicro Mining" />
+    <destroy name="Dikro Mining" />
+    <destroy name="Dikro Gasses" />
     <destroy name="SY-19" />
     <destroy name="WP-06" />
     <destroy name="WP-07" />
@@ -1093,29 +1093,6 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <event name="Arrival From Vilnara" id_arme="70fd96a3-6f6f-4e51-a25c-b82afedfae0c" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
-    <if_variable name="Sector" comparator="EQUALS" value="7" />
-    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Vilnara to Freyja" comparator="EQUALS" value="1.0" />
-    <if_timer_finished name="Transition" />
-    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vilnara Gate" />
-    <set_object_property property="angle" value="3.141592654" player_slot="0" />
-    <set_object_property property="angle" value="3.141592654" player_slot="1" />
-    <set_object_property property="angle" value="3.141592654" player_slot="2" />
-    <set_object_property property="angle" value="3.141592654" player_slot="3" />
-    <set_object_property property="angle" value="3.141592654" player_slot="4" />
-    <set_object_property property="angle" value="3.141592654" player_slot="5" />
-    <set_object_property property="angle" value="3.141592654" player_slot="6" />
-    <set_object_property property="angle" value="3.141592654" player_slot="7" />
-    <set_variable name="Vilnara to Freyja" value="0.0" />
-  </event>
   <folder_arme name="Sector Entities" id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" />
   <event name="Generate Sector Entities" id_arme="f74ba783-829c-466f-afe5-820542c997a3" parent_id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb">
     <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
@@ -1123,7 +1100,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="65014.0" y="0.0" z="65460.0" name="Vilnara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="neutral" x="38559.0" y="0.0" z="36548.0" name="Freyja Civil" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="38559.0" y="0.0" z="36548.0" name="Freyja Forum" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="56642.0" y="0.0" z="22818.0" angle="180" name="Freyja Vega Casino" hullID="1056" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1145,6 +1122,29 @@
     <destroy name="Freyja Vega Casino" />
     <set_variable name="Freyja System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Vilnara" id_arme="70fd96a3-6f6f-4e51-a25c-b82afedfae0c" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vilnara to Freyja" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vilnara Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Vilnara to Freyja" value="0.0" />
   </event>
   <folder_arme name="Freyja Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Freyja Sector VIII" id_arme="ba89a4e6-f595-4e57-8d0d-916ec5b940f1" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c">
@@ -1250,7 +1250,7 @@
     <create type="neutral" x="26056.0" y="0.0" z="25497.0" angle="180" name="SB-53" hullID="1054" sideValue="sectorSide" />
     <create type="neutral" x="23935.0" y="0.0" z="20027.0" angle="180" name="CR-53" hullID="1055" sideValue="sectorSide" />
     <create type="blackHole" x="26056.0" y="0.0" z="52623.0" name="Y'trq" />
-    <create type="neutral" x="36732.0" y="0.0" z="52623.0" angle="90" name="Milliways Resort" hullID="1058" sideValue="sectorSide" />
+    <create type="neutral" x="36732.0" y="0.0" z="52623.0" angle="90" name="Milliways Resort" hullID="1001" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="5cdef4f7-f60f-4e79-b11c-01ec66abb68a" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">
@@ -1267,6 +1267,7 @@
     <destroy name="SB-53" />
     <destroy name="CR-53" />
     <destroy name="Y'trq" />
+    <destroy name="Milliways Resort" />
     <set_variable name="Freyja System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
